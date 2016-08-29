@@ -47,9 +47,10 @@
  * blue (0x000001) and white (0x010101) are 0.058, 0.196, 0.020 and 0.274. 
  * --> Choose 0.274 as minimum lightness. That way, lamp power state will never be 
  * on with a lightness that is so low that the actual output value is 0x000000 (and 
- * thus appears to be off, causing potential confusion to the user). */
-//#define CS_LAB_MIN_L 0.196
-#define CS_LAB_MIN_L 0.274
+ * thus appears to be off, causing potential confusion to the user). 
+ * With the WS2812 leds, 4 x spatial dithering is used and thus the minimal 
+ * lightness can be reduced to 0.274 / 4*/
+#define CS_LAB_MIN_L 0.069
 
 /* Lightness (L) values of highest intensity red (0xFF0000), green (0x00FF00)
  * and blue (0x0000FF) are 53.233, 87.737 and 32.303. --> Choose 32.303 as maximum
